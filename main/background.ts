@@ -15,6 +15,8 @@ if (isProd) {
 (async () => {
   await app.whenReady();
 
+  bindHandlers();
+
   const mainWindow = createWindow('main', {
     width: 1000,
     height: 600,
@@ -23,7 +25,6 @@ if (isProd) {
     }
   });
 
-  bindHandlers();
   if (isProd) {
     await mainWindow.loadURL('app://./home');
   } else {
