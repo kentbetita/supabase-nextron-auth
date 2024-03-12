@@ -3,7 +3,6 @@ import { supabase } from './helpers/supabase-client';
 
 export const bindHandlers = () => {
   ipcMain.handle('supabase-auth', async (event, user) => {
-    console.log('Triggered!');
     const { email, password } = user;
 
     try {
